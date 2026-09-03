@@ -1,0 +1,15 @@
+{
+  "html_bytes": 103764,
+  "css_bytes": 44919,
+  "js_bytes": 10274,
+  "image_elements": 242,
+  "local_image_files": 186,
+  "lazy_count": 241,
+  "eager_count": 1,
+  "high_priority_count": 1,
+  "base64_remaining": 0,
+  "external_img_remaining": 0,
+  "inline_style_blocks": 0,
+  "inline_executable_scripts": 0,
+  "service_schema_count": 6
+}
