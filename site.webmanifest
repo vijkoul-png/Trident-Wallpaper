@@ -1,0 +1,17 @@
+{
+  "name": "Trident Wallpaper",
+  "short_name": "Trident Wallpaper",
+  "start_url": "/",
+  "display": "standalone",
+  "lang": "en-IN",
+  "theme_color": "#24282A",
+  "background_color": "#f6f3ef",
+  "icons": [
+    {
+      "src": "/assets/images/image-001.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
