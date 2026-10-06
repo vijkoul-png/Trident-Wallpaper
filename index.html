@@ -1591,6 +1591,277 @@ body:before{opacity:.07;background-size:6px 6px}.hero .wrap:after{background:rad
 <meta content="Premium wallpaper interior design by Tridant Wallpaper in Greater Noida West" property="og:image:alt"/>
 <meta content="https://Tridantwallpaper.in/assets/images/image-002.webp" name="twitter:image"/>
 <meta content="Premium wallpaper interior design by Tridant Wallpaper in Greater Noida West" name="twitter:image:alt"/>
+
+<style id="tridant-offer-popup-css">
+/* ===== Tridant Wallpaper — Professional Offer Popup ===== */
+.tw-offer-overlay{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(17,20,22,.70);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .28s ease,visibility .28s ease;
+}
+.tw-offer-overlay.is-open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.tw-offer-modal{
+  width:min(560px,100%);
+  overflow:hidden;
+  border:1px solid rgba(201,110,79,.65);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 30px 90px rgba(0,0,0,.38);
+  transform:translateY(18px) scale(.97);
+  transition:transform .32s cubic-bezier(.2,.8,.2,1);
+}
+.tw-offer-overlay.is-open .tw-offer-modal{
+  transform:translateY(0) scale(1);
+}
+.tw-offer-head{
+  position:relative;
+  padding:30px 30px 25px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 92% 0%,rgba(201,110,79,.30),transparent 31%),
+    linear-gradient(135deg,#111416 0%,#24282a 72%,#303537 100%);
+}
+.tw-offer-kicker{
+  margin:0 48px 10px 0;
+  color:#e38b6d;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+}
+.tw-offer-head h2{
+  margin:0;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(30px,5vw,42px);
+  line-height:1.02;
+  letter-spacing:-1.5px;
+}
+.tw-offer-sub{
+  margin:12px 0 0;
+  color:#f0c1ad;
+  font-size:15px;
+  font-weight:800;
+}
+.tw-offer-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  font-size:25px;
+  line-height:1;
+  cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+.tw-offer-close:hover{
+  background:rgba(255,255,255,.18);
+  transform:rotate(5deg);
+}
+.tw-offer-body{
+  padding:27px 30px 24px;
+}
+.tw-offer-intro{
+  margin:0 0 18px;
+  color:#5f6662;
+  font-size:14px;
+  line-height:1.75;
+}
+.tw-offer-deals{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:0 0 20px;
+}
+.tw-offer-deal{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-height:82px;
+  padding:15px 16px;
+  border:1px solid #e5d9d2;
+  border-radius:14px;
+  background:#fbf8f5;
+}
+.tw-offer-percent{
+  flex:0 0 auto;
+  color:#c96e4f;
+  font-size:28px;
+  font-weight:950;
+  letter-spacing:-1px;
+}
+.tw-offer-deal strong{
+  display:block;
+  color:#24282a;
+  font-size:13px;
+  line-height:1.35;
+}
+.tw-offer-deal span{
+  display:block;
+  margin-top:3px;
+  color:#77736f;
+  font-size:10px;
+  line-height:1.35;
+}
+.tw-offer-points{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px 18px;
+  margin:0 0 22px;
+  color:#4f5753;
+  font-size:11px;
+}
+.tw-offer-point{
+  display:flex;
+  align-items:flex-start;
+  gap:7px;
+}
+.tw-offer-point b{color:#c96e4f}
+.tw-offer-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.tw-offer-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:47px;
+  padding:12px 15px;
+  border-radius:7px;
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none!important;
+  cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.tw-offer-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 9px 20px rgba(0,0,0,.12);
+}
+.tw-offer-wa{
+  background:#23886f;
+  color:#fff!important;
+}
+.tw-offer-call{
+  background:#c96e4f;
+  color:#fff!important;
+}
+.tw-offer-note{
+  margin:14px 0 0;
+  color:#8a8580;
+  font-size:9px;
+  line-height:1.5;
+  text-align:center;
+}
+.tw-offer-float{
+  position:fixed;
+  left:18px;
+  bottom:20px;
+  z-index:9998;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:10px 15px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  background:#24282a;
+  color:#fff;
+  box-shadow:0 12px 28px rgba(0,0,0,.20);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.3px;
+  cursor:pointer;
+}
+.tw-offer-float b{color:#e38b6d}
+.tw-offer-float:hover{background:#303537}
+@media(max-width:600px){
+  .tw-offer-overlay{padding:14px}
+  .tw-offer-head{padding:25px 22px 21px}
+  .tw-offer-body{padding:22px 22px 19px}
+  .tw-offer-deals{grid-template-columns:1fr}
+  .tw-offer-points{grid-template-columns:1fr}
+  .tw-offer-actions{grid-template-columns:1fr}
+  .tw-offer-float{left:12px;bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tw-offer-overlay,.tw-offer-modal,.tw-offer-btn,.tw-offer-close{transition:none}
+}
+</style>
+
+
+<style id="tridant-offer-popup-larger-text">
+.tw-offer-head h2{
+  font-size:clamp(36px,5.8vw,50px)!important;
+}
+.tw-offer-sub{
+  font-size:17px!important;
+  line-height:1.45!important;
+}
+.tw-offer-intro{
+  font-size:15.5px!important;
+  line-height:1.8!important;
+}
+.tw-offer-percent{
+  font-size:34px!important;
+}
+.tw-offer-deal strong{
+  font-size:15px!important;
+}
+.tw-offer-deal span{
+  font-size:11.5px!important;
+}
+.tw-offer-points{
+  font-size:12.5px!important;
+  line-height:1.5!important;
+}
+.tw-offer-btn{
+  font-size:13px!important;
+}
+.tw-offer-note{
+  font-size:10px!important;
+}
+@media(max-width:600px){
+  .tw-offer-head h2{
+    font-size:34px!important;
+  }
+  .tw-offer-sub{
+    font-size:15px!important;
+  }
+  .tw-offer-intro{
+    font-size:14px!important;
+  }
+  .tw-offer-percent{
+    font-size:31px!important;
+  }
+  .tw-offer-deal strong{
+    font-size:14px!important;
+  }
+  .tw-offer-points{
+    font-size:12px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="top"><div class="wrap"><span>Premium Wallpapers • Glass Films • Interior Décor</span><span>Greater Noida West • Call +91-9811882211</span></div></div>
@@ -2158,4 +2429,97 @@ function sendToWhatsApp(e){
   });
 })();
 </script>
+
+<!-- ===== Tridant Wallpaper Professional Offer Popup ===== -->
+<div class="tw-offer-overlay" id="tw-offer-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tw-offer-title">
+  <div class="tw-offer-modal" role="document">
+    <div class="tw-offer-head">
+      <p class="tw-offer-kicker">✦ Tridant Wallpaper • Special Offer</p>
+      <h2 id="tw-offer-title">Exclusive Wallpaper Savings</h2>
+      <p class="tw-offer-sub">Upgrade your walls with premium designs &amp; customised finishes</p>
+      <button class="tw-offer-close" id="tw-offer-close" type="button" aria-label="Close offer">×</button>
+    </div>
+    <div class="tw-offer-body">
+      <p class="tw-offer-intro">
+        Discover premium wallpaper solutions from Tridant Wallpaper in Greater Noida West.
+        Enjoy special savings on selected wallpaper categories.
+      </p>
+
+      <div class="tw-offer-deals">
+        <div class="tw-offer-deal">
+          <div class="tw-offer-percent">10%</div>
+          <div>
+            <strong>OFF on Imported Wallpaper</strong>
+            <span>Premium imported designs for elegant interiors</span>
+          </div>
+        </div>
+        <div class="tw-offer-deal">
+          <div class="tw-offer-percent">20%</div>
+          <div>
+            <strong>OFF on Customized Wallpaper</strong>
+            <span>Personalised designs made for your space</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tw-offer-points">
+        <div class="tw-offer-point"><b>✓</b><span>Premium &amp; designer wallpapers</span></div>
+        <div class="tw-offer-point"><b>✓</b><span>Customised wallpaper &amp; murals</span></div>
+        <div class="tw-offer-point"><b>✓</b><span>Professional wallpaper installation</span></div>
+        <div class="tw-offer-point"><b>✓</b><span>Greater Noida West</span></div>
+      </div>
+
+      <div class="tw-offer-actions">
+        <a class="tw-offer-btn tw-offer-wa" href="https://wa.me/919811882211?text=Hello%20Tridant%20Wallpaper%2C%20I%20want%20to%20know%20about%20the%2010%25%20Imported%20Wallpaper%20%2F%2020%25%20Customized%20Wallpaper%20offer." target="_blank" rel="noopener">Claim Offer on WhatsApp</a>
+        <a class="tw-offer-btn tw-offer-call" href="tel:+919811882211">Call +91 9811882211</a>
+      </div>
+
+      <p class="tw-offer-note">Offer subject to applicable terms, wallpaper selection and project requirements.</p>
+    </div>
+  </div>
+</div>
+
+<button class="tw-offer-float" id="tw-offer-open" type="button" aria-label="Open wallpaper offer">
+  ✦ <b>10% / 20% OFF</b> • Wallpaper Offer
+</button>
+
+
+<script id="tridant-offer-popup-js">
+(function(){
+  var overlay = document.getElementById('tw-offer-overlay');
+  var closeBtn = document.getElementById('tw-offer-close');
+  var openBtn = document.getElementById('tw-offer-open');
+  if(!overlay || !closeBtn || !openBtn) return;
+
+  function openOffer(){
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){ closeBtn.focus(); },120);
+  }
+
+  function closeOffer(){
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  closeBtn.addEventListener('click', closeOffer);
+  openBtn.addEventListener('click', openOffer);
+
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeOffer();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('is-open')) closeOffer();
+  });
+
+  /* Show automatically shortly after the website opens. */
+  window.addEventListener('load', function(){
+    setTimeout(openOffer, 700);
+  });
+})();
+</script>
+
 </body></html>
